@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('LandingPage');
 });
+
+Route::get('/login', [\App\Http\Controllers\LandingPage::class, 'showLoginForm'])->name('login');
+Route::get('/Register', [\App\Http\Controllers\LandingPage::class,'showRegisterChoice'])->name('Register');
+Route::get('/Register/freelancer', [\App\Http\Controllers\LandingPage::class,'FreelancerRegister'])->name('FreelancerRegister');
