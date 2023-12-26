@@ -9,13 +9,13 @@ class FreelancerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'username' => ['required'],
-            'password' => ['required'],
-            'email' => ['required'],
-            'city' => ['nullable'],
-            'skills' => ['nullable'],
+            'FirstName' => ['required'],
+            'LastName' => ['required'],
+            'UserName' => ['required'],
+            'Password' => ['required'],
+            'Email' => ['required'],
+            'City' => ['nullable'],
+            'Skills' => ['nullable'],
         ];
     }
 

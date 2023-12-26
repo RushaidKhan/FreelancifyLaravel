@@ -1,10 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FreelancerController;
-use App\Http\Controllers\EmployerController;
-use App\Http\Controllers\LandingPage;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +13,10 @@ use App\Http\Controllers\LandingPage;
 |
 */
 
-Route::get('/', function () {return view('LandingPage');});
+Route::get('/', function () {
+    return view('LandingPage');
+});
 
-Route::get('/login', [LandingPage::class, 'showLoginForm'])->name('login');
-Route::get('/Register', [LandingPage::class,'showRegisterChoice'])->name('Register');
-
-
-Route::get('/freelancer/create', [FreelancerController::class, 'create'])->name('freelancer.create');
-Route::post('/freelancer/store', [FreelancerController::class, 'store'])->name('freelancer.store');
-
-Route::get('/employer/create', [EmployerController::class, 'create'])->name('employer.create');
-Route::post('/employer/store', [EmployerController::class, 'store'])->name('employer.store');
+Route::get('/login', [\App\Http\Controllers\LandingPage::class, 'showLoginForm'])->name('login');
+Route::get('/Register', [\App\Http\Controllers\LandingPage::class,'showRegisterChoice'])->name('Register');
+Route::get('/Register/freelancer', [\App\Http\Controllers\LandingPage::class,'FreelancerRegister'])->name('FreelancerRegister');

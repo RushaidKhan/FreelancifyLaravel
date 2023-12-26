@@ -3,8 +3,8 @@
     <div class="ChooseProfession">
         <h1>Who are you?</h1>
         <div class="chooser">
-            <a href="{{route('freelancer.store')}}">Freelancer</a>
-            <a href="{{route('employer.store')}}">Employer</a>
+            <a href="{{route('FreelancerRegister')}}">Freelancer</a>
+            <a href="#">Employer</a>
         </div>
     </div>
 </div>

@@ -13,13 +13,13 @@ class FreelancerFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => $this->faker->firstName(),
-            'last_name' => $this->faker->lastName(),
-            'username' => $this->faker->userName(),
-            'password' => bcrypt($this->faker->password()),
-            'email' => $this->faker->unique()->safeEmail(),
-            'city' => $this->faker->city(),
-            'skills' => $this->faker->word(),
+            'FirstName' => $this->faker->firstName(),
+            'LastName' => $this->faker->lastName(),
+            'UserName' => $this->faker->userName(),
+            'Password' => bcrypt($this->faker->password()),
+            'Email' => $this->faker->unique()->safeEmail(),
+            'City' => $this->faker->city(),
+            'Skills' => $this->faker->word(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

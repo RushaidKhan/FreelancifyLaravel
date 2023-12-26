@@ -9,11 +9,11 @@ return new class extends Migration {
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->id();
-            $table->string('company_name');
-            $table->string('employer_name');
-            $table->string('email');
-            $table->string('password');
-            $table->string('city_country');
+            $table->string('CompanyName');
+            $table->string('EmployerName');
+            $table->string('Email');
+            $table->string('Password');
+            $table->string('city/country');
             $table->string('url')->nullable();
             $table->timestamps();
         });
