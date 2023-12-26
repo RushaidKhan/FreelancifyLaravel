@@ -2,37 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\FreelancerRequest;
 use App\Models\Freelancer;
 
 class FreelancerController extends Controller
 {
-    public function index()
+    public function create()
     {
-        return Freelancer::all();
+        return view('Freelancer/FreelancerRegister');
     }
 
     public function store(FreelancerRequest $request)
     {
-        return Freelancer::create($request->validated());
-    }
+        // Validation logic is handled by the FreelancerRequest
 
-    public function show(Freelancer $freelancer)
-    {
-        return $freelancer;
-    }
+        Freelancer::create([
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'username' => $request->input('username'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'city' => $request->input('city'),
+            'skills ' => $request->input('skills'),
+        ]);
 
-    public function update(FreelancerRequest $request, Freelancer $freelancer)
-    {
-        $freelancer->update($request->validated());
-
-        return $freelancer;
-    }
-
-    public function destroy(Freelancer $freelancer)
-    {
-        $freelancer->delete();
-
-        return response()->json();
+        // Redirect to the login page or wherever you want after registration
+        return redirect()->route('login')->with('success', 'Registration successful!');
     }
 }

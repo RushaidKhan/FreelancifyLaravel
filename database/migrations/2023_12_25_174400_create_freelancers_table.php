@@ -9,13 +9,13 @@ return new class extends Migration {
     {
         Schema::create('freelancers', function (Blueprint $table) {
             $table->id();
-            $table->string('FirstName');
-            $table->string('LastName');
-            $table->string('UserName');
-            $table->string('Password');
-            $table->string('Email');
-            $table->string('City')->nullable();
-            $table->string('Skills')->nullable();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('username');
+            $table->string('password');
+            $table->string('email');
+            $table->string('city')->nullable();
+            $table->string('skills')->nullable();
             $table->timestamps();
         });
     }
